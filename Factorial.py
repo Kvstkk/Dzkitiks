@@ -13,9 +13,15 @@ class CalculatorFactorial:
 
 def main():
     while True:
-        n = int(input("Enter number: "))
-        result = CalculatorFactorial.factorial(n)
-        print(f" {n}! = {result}")
+        n = input("Enter number or q to stop: ")
+        if n == "q":
+            break
+        try:
+            n = int(n)
+            result = CalculatorFactorial.factorial(n)
+            print(f" {n}! = {result}")
+        except ValueError:
+            print("Invalid input")
 
 
 if __name__ == "__main__":
